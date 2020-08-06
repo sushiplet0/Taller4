@@ -9,6 +9,6 @@ package dominio;
  *
  * @author sushipleto
  */
-public class App {
+public class Ciudad {
     
 }
