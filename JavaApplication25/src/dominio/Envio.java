@@ -9,6 +9,71 @@ package dominio;
  *
  * @author sushipleto
  */
-public class Envio {
+public abstract class Envio {
+    private String codigo;
+    private String rutRemitente;
+    private String rutDestino;
+    private String ciudadEnvio;
+    private String ciudadDestino;
+    private int costo;
+    public Envio(String codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino){
+        this.codigo = codigo;
+        this.rutRemitente = rutR;
+        this.rutDestino = rutD;
+        this.ciudadEnvio = ciudadEnvio;
+        this.ciudadDestino = ciudadDestino;
+        this.costo = 0;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
+    }
+
+    public String getRutRemitente() {
+        return rutRemitente;
+    }
+
+    public void setRutRemitente(String rutRemitente) {
+        this.rutRemitente = rutRemitente;
+    }
+
+    public String getRutDestino() {
+        return rutDestino;
+    }
+
+    public void setRutDestino(String rutDestino) {
+        this.rutDestino = rutDestino;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo){
+        this.costo = costo;
+    }
+
+    public String getCiudadEnvio() {
+        return ciudadEnvio;
+    }
+
+    public void setCiudadEnvio(String ciudadEnvio) {
+        this.ciudadEnvio = ciudadEnvio;
+    }
+
+    public String getCiudadDestino() {
+        return ciudadDestino;
+    }
+
+    public void setCiudadDestino(String ciudadDestino) {
+        this.ciudadDestino = ciudadDestino;
+    }
+    
+    public abstract void calcularCosto();
+
     
 }
