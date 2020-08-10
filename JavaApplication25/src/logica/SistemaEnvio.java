@@ -11,4 +11,33 @@ package logica;
  */
 public interface SistemaEnvio {
     
+    public boolean ingresarCiudad();
+    
+    public boolean ingresarCliente();
+    
+    public boolean ingresarEnvioDimension();
+    
+    public boolean ingresarEnvioPeso();
+    
+    public boolean asociarClientesEnvio();
+    
+    public boolean realizarEnvioD();
+    
+    public boolean realizarEnvioP();
+    
+    public String enviosPorTipo();
+    
+    public String enviosPersona();
+    
+    public String enviosPorCiudad();
+    
+    public boolean registrarCliente();
+    
+    public String[] datosCliente();
+    
+    public int totalClientes();
+    
+    public String[] datosEnvios();
+    
+    public int totalEnvios();
 }
