@@ -16,17 +16,17 @@ public class App {
     public static void main(String[] args){
         ListaEnvios le = new ListaEnvios();
         //PROBANDING LA LISTA DE ENVIOS
-        EnvioD envio = new EnvioD("24","2","2","coquimbo","la serena",14,15,12);
+        EnvioD envio = new EnvioD(24,"2","2","coquimbo","la serena",14,15,12);
         envio.calcularCosto();
-        EnvioP envioP = new EnvioP("95","3","3","coquimbo","copiapo",10000);
+        EnvioP envioP = new EnvioP(95,"3","3","coquimbo","copiapo",10000);
         envioP.calcularCosto();
-        EnvioD envio3 = new EnvioD("6","2","2","copiapo","la serena",14,12,12);
+        EnvioD envio3 = new EnvioD(6,"2","2","copiapo","la serena",14,12,12);
         envio3.calcularCosto();
-        EnvioD envio4 = new EnvioD("14","2","2","chillan","copiapo",14,5,12);
+        EnvioD envio4 = new EnvioD(14,"2","2","chillan","copiapo",14,5,12);
         envio4.calcularCosto();
-        EnvioD envio5 = new EnvioD("56","2","2","copiapo","chillan",14,15,32);
+        EnvioD envio5 = new EnvioD(56,"2","2","copiapo","chillan",14,15,32);
         envio5.calcularCosto();
-        EnvioP envioP2 = new EnvioP("75","3","3","poto","caca",1000);
+        EnvioP envioP2 = new EnvioP(75,"3","3","poto","caca",1000);
         envioP2.calcularCosto();
         le.IngresarEnvio(envio);
         le.IngresarEnvio(envioP);

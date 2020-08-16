@@ -33,6 +33,11 @@ public class ListaEnvios {
             last = nuevoEnvio;
         }
     }
+    
+    public NodoEnvio getLast() {
+        return last;
+    }
+    
     public String enviosTipoD(){
         String r = "";
         NodoEnvio aux = first;

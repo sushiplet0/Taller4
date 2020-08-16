@@ -58,5 +58,21 @@ public class Cliente {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+    public ListaEnvios getEnviados() {
+        return enviados;
+    }
+
+    public void setEnviados(ListaEnvios enviados) {
+        this.enviados = enviados;
+    }
+
+    public ListaEnvios getRecibidos() {
+        return recibidos;
+    }
+
+    public void setRecibidos(ListaEnvios recibidos) {
+        this.recibidos = recibidos;
+    }
     
 }

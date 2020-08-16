@@ -10,13 +10,13 @@ package dominio;
  * @author sushipleto
  */
 public abstract class Envio {
-    private String codigo;
+    private int codigo;
     private String rutRemitente;
     private String rutDestino;
     private String ciudadEnvio;
     private String ciudadDestino;
     private int costo;
-    public Envio(String codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino){
+    public Envio(int codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino){
         this.codigo = codigo;
         this.rutRemitente = rutR;
         this.rutDestino = rutD;
@@ -25,11 +25,11 @@ public abstract class Envio {
         this.costo = 0;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo){
+    public void setCodigo(int codigo){
         this.codigo = codigo;
     }
 

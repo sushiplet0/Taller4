@@ -12,7 +12,7 @@ package dominio;
 public class EnvioP extends Envio{
     private int pesoNeto;
 
-    public EnvioP(String codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino, int pesoN) {
+    public EnvioP(int codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino, int pesoN) {
         super(codigo, rutR, rutD, ciudadEnvio, ciudadDestino);
         this.pesoNeto = pesoN;
         
@@ -35,7 +35,7 @@ public class EnvioP extends Envio{
     @Override
     public String toString() {
         String r = "Tipo de envío: Envio por peso(P) | ";
-        String codigo = super.getCodigo();
+        int codigo = super.getCodigo();
         int costo = super.getCosto();
         r+= "Código de envio: "+codigo+" | Costo de envio: "+costo;
         return r;

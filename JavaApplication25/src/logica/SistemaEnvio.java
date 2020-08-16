@@ -11,33 +11,29 @@ package logica;
  */
 public interface SistemaEnvio {
     
-    public boolean ingresarCiudad();
+    public boolean ingresarCiudad(String nombre);
     
-    public boolean ingresarCliente();
+    public boolean ingresarCliente(String rut, String nombre, String apellido, String ciudadViviendo);
     
-    public boolean ingresarEnvioDimension();
+    public boolean ingresarEnvioDimension(int codigoEnvio, String rutRemitente, String rutDestino, int dim1, int dim2, int dim3);
     
-    public boolean ingresarEnvioPeso();
+    public boolean ingresarEnvioPeso(int codigoEnvio, String rutRemitente, String rutDestino, int pesoGramos);
     
-    public boolean asociarClientesEnvio();
+    public boolean realizarEnvioD(int dim1, int dim2, int dim3, String rutRemitente, String rutDestino);
     
-    public boolean realizarEnvioD();
-    
-    public boolean realizarEnvioP();
+    public boolean realizarEnvioP(int pesoGramos, String rutRemitente, String rutDestino);
     
     public String enviosPorTipo();
     
-    public String enviosPersona();
+    public String enviosPersona(String rutCliente);
     
     public String enviosPorCiudad();
     
-    public boolean registrarCliente();
-    
-    public String[] datosCliente();
+    public String[] datosCliente(int i);
     
     public int totalClientes();
     
-    public String[] datosEnvios();
+    public String[] datosEnvios(int i);
     
     public int totalEnvios();
 }
