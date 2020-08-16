@@ -1,0 +1,3 @@
+20.729.079-3,Paula,Veloso,Caldera
+20.616.273-2,Pablo,Rios,Ovalle
+12.426.966-0,Edison,Rios,Ovalle

@@ -38,6 +38,33 @@ public class ListaEnvios {
         return last;
     }
     
+    public int totalEnvios(){
+        int contador = 1;
+        NodoEnvio aux = first;
+        while(aux.getNext()!=first){
+            contador++;
+            aux = aux.getNext();
+        }
+        return contador;
+    }
+    
+    public Envio getEnvioI(int i){
+        int contador = 0;
+        NodoEnvio aux = first;
+        while(aux.getNext()!=first){
+            if(contador==i){
+                break;
+            }
+            contador++;
+            aux = aux.getNext();
+        }
+        if(contador==0){
+            return first.getEnvio();
+        }else{
+            return aux.getEnvio();
+        }
+    }
+    
     public String enviosTipoD(){
         String r = "";
         NodoEnvio aux = first;
@@ -107,7 +134,7 @@ public class ListaEnvios {
             aux = aux.getNext();
         }
         if(aux.getEnvio().getCiudadEnvio().equals(ciudad)){
-            r+= aux.getEnvio().toString();
+            r+= aux.getEnvio().toString()+"\n";
         }
         return r;
     }
@@ -121,7 +148,7 @@ public class ListaEnvios {
             aux = aux.getNext();
         }
         if(aux.getEnvio().getCiudadDestino().equals(ciudad)){
-            r+= aux.getEnvio().toString();
+            r+= aux.getEnvio().toString()+"\n";
         }
         return r;
     }

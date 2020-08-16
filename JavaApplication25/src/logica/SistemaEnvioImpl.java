@@ -222,8 +222,8 @@ public class SistemaEnvioImpl implements SistemaEnvio{
 
     @Override
     public String enviosPorTipo() {
-        String salida = "";
-        salida += "Envios de tipo dimensiones: \n"+listaEnvios.enviosTipoD()+"\nEnvios de tipo peso: \n"+listaEnvios.enviosTipoP()+"\n";
+        String salida = "\n";
+        salida += "Envios de tipo dimensiones: \n\n"+listaEnvios.enviosTipoD()+"\n------------------------\n"+"\nEnvios de tipo peso: \n"+listaEnvios.enviosTipoP()+"\n";
         return salida;
     }
 
@@ -238,8 +238,10 @@ public class SistemaEnvioImpl implements SistemaEnvio{
             }
         }
         if(clienteBuscado!=null){
-            salida += "Envios realizados por el cliente "+clienteBuscado.getNombre()+" "+clienteBuscado.getApellido()+": \n"+listaEnvios.enviosPersonaEnviados(rutCliente);
+            salida += "\nEnvios realizados por el cliente "+clienteBuscado.getNombre()+" "+clienteBuscado.getApellido()+": \n"+listaEnvios.enviosPersonaEnviados(rutCliente);
+            salida+="\n------------------------\n";
             salida+= "\nEnvios recibidos por el cliente "+clienteBuscado.getNombre()+" "+clienteBuscado.getApellido()+": \n"+listaEnvios.enviosPersonaRecibidos(rutCliente)+"\n";
+            salida+="------------------------\n";
             return salida;
         }else{
             throw new NullPointerException("Cliente no encontrado en el sistema.");
@@ -248,10 +250,11 @@ public class SistemaEnvioImpl implements SistemaEnvio{
 
     @Override
     public String enviosPorCiudad() {
-        String salida = "";
+        String salida = "\n";
         for(Ciudad ciudad:ListaCiudades){
             salida+= "Envios realizados en la ciudad de "+ciudad.getNombre()+":\n"+listaEnvios.enviosCiudadRemitente(ciudad.getNombre());
-            salida+="\nEnvios recibidos en la ciudad de "+ciudad.getNombre()+":\n"+listaEnvios.enviosCiudadDestino(ciudad.getNombre());
+            salida+="\nEnvios recibidos en la ciudad de "+ciudad.getNombre()+":\n"+listaEnvios.enviosCiudadDestino(ciudad.getNombre())+"\n";
+            salida+="------------------------\n";
         }
         return salida;
     }
@@ -274,12 +277,35 @@ public class SistemaEnvioImpl implements SistemaEnvio{
 
     @Override
     public String[] datosEnvios(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Envio envio = listaEnvios.getEnvioI(i);
+        String codigo = Integer.toString(envio.getCodigo());
+        String tipo;
+        String rutRemitente = envio.getRutRemitente();
+        String rutDestino = envio.getRutDestino();
+        
+        if(envio instanceof EnvioD){
+            EnvioD envioDimension = (EnvioD) envio;
+            tipo = "D";
+            String dim1 = Integer.toString(envioDimension.getDimension1());
+            String dim2 = Integer.toString(envioDimension.getDimension2());
+            String dim3 = Integer.toString(envioDimension.getDimension3());
+            String[] datosEnvio = {codigo,tipo,rutRemitente,rutDestino,dim1,dim2,dim3};
+            return datosEnvio;
+        }else if(envio instanceof EnvioP){
+            EnvioP envioPeso = (EnvioP) envio;
+            tipo = "P";
+            String pesoNeto = Integer.toString(envioPeso.getPesoNeto());
+            String[] datosEnvio ={codigo,tipo,rutRemitente,rutDestino,pesoNeto};
+            return datosEnvio;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
     public int totalEnvios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listaEnvios.totalEnvios();
     }
     
 }
