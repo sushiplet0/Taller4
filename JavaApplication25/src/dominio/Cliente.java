@@ -5,6 +5,8 @@
  */
 package dominio;
 
+import logica.ListaEnvios;
+
 /**
  *
  * @author sushipleto
@@ -13,12 +15,16 @@ public class Cliente {
     private String rut;
     private String nombre;
     private String apellido;
-    private Ciudad ciudad;
-    public Cliente(String rut, String nombre, String apellido, Ciudad ciudad){
+    private String ciudad;
+    private ListaEnvios enviados;
+    private ListaEnvios recibidos;
+    public Cliente(String rut, String nombre, String apellido, String ciudad){
         this.rut = rut;
         this.nombre = nombre;
         this.apellido = apellido;
         this.ciudad = ciudad;
+        this.enviados = new ListaEnvios();
+        this.recibidos = new ListaEnvios();
     }
 
     public String getRut() {
@@ -45,11 +51,11 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public Ciudad getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
     
