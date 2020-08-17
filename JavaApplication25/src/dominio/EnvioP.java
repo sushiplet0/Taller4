@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dominio;
 
 /**
@@ -12,16 +8,33 @@ package dominio;
 public class EnvioP extends Envio{
     private int pesoNeto;
 
+    /**
+     *
+     * @param codigo
+     * @param rutR
+     * @param rutD
+     * @param ciudadEnvio
+     * @param ciudadDestino
+     * @param pesoN
+     */
     public EnvioP(int codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino, int pesoN) {
         super(codigo, rutR, rutD, ciudadEnvio, ciudadDestino);
         this.pesoNeto = pesoN;
         
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPesoNeto() {
         return pesoNeto;
     }
 
+    /**
+     *
+     * @param pesoNeto
+     */
     public void setPesoNeto(int pesoNeto) {
         this.pesoNeto = pesoNeto;
     }

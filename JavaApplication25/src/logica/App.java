@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package logica;
 
 import dominio.*;
@@ -11,7 +7,7 @@ import ucn.*;
 
 /**
  *
- * @author sushipleto
+ * @author Paula Veloso y Pablo Ríos
  */
 public class App {
     public static void main(String[] args) throws IOException{
@@ -23,6 +19,9 @@ public class App {
         SobreescribirTxts(sys);
     }
     
+    /**
+     *
+     */
     public static void desplegarMenu(){
         StdOut.println("\n------------------------------------------");
         StdOut.println("Bienvenido al menu de opciones UCN Envíos para una cuarentena segura");
@@ -34,6 +33,11 @@ public class App {
         StdOut.println("------------------------------------------\n");
         StdOut.println("Ingrese la opción: ");
     }
+
+    /**
+     *
+     * @param sys
+     */
     public static void Sistema(SistemaEnvio sys){
         StdOut.println("!Bienvenido a UCN envios¡\n");
         desplegarMenu();
@@ -98,6 +102,11 @@ public class App {
         StdOut.println("\n¡Gracias por usar nuestros servicios!\n");
     }
 	
+    /**
+     *
+     * @param rut
+     * @return
+     */
     public static boolean validarRut(String rut){
         boolean validacion = false;
         try{
@@ -121,6 +130,11 @@ public class App {
         return validacion; 
     }
 	
+    /**
+     *
+     * @param sys
+     * @throws IOException
+     */
     public static void leerClientes(SistemaEnvio sys)throws IOException{
 	ArchivoEntrada arch = new ArchivoEntrada("clientes.txt");
         while(!arch.isEndFile()){
@@ -140,6 +154,11 @@ public class App {
 	arch.close();
     }
 	
+    /**
+     *
+     * @param sys
+     * @throws IOException
+     */
     public static void leerCiudades(SistemaEnvio sys)throws IOException{
 	ArchivoEntrada arch = new ArchivoEntrada("ciudades.txt");
         while(!arch.isEndFile()){
@@ -154,6 +173,11 @@ public class App {
 	arch.close();
     }
 	
+    /**
+     *
+     * @param sys
+     * @throws IOException
+     */
     public static void leerEnvios(SistemaEnvio sys)throws IOException{
         ArchivoEntrada arch = new ArchivoEntrada("envios.txt");
         while(!arch.isEndFile()){
@@ -186,6 +210,11 @@ public class App {
 	arch.close();
     }
     
+    /**
+     *
+     * @param sys
+     * @throws IOException
+     */
     public static void SobreescribirTxts(SistemaEnvio sys) throws IOException{
         ArchivoSalida arch = new ArchivoSalida("clientes.txt");
         int cantidadClientes= sys.totalClientes();

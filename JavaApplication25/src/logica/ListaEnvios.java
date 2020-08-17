@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package logica;
 
 import dominio.*;
 
 /**
  *
- * @author sushipleto
+ * @author Paula Veloso y Pablo Ríos
  */
 public class ListaEnvios {
     private NodoEnvio first;
@@ -18,6 +14,11 @@ public class ListaEnvios {
         this.first = null;
         this.last = null;
     }
+
+    /**
+     *
+     * @param envio
+     */
     public void IngresarEnvio(Envio envio){
         NodoEnvio nuevoEnvio = new NodoEnvio(envio);
         if(first == null){
@@ -34,10 +35,18 @@ public class ListaEnvios {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public NodoEnvio getLast() {
         return last;
     }
     
+    /**
+     *
+     * @return
+     */
     public int totalEnvios(){
         int contador = 1;
         NodoEnvio aux = first;
@@ -48,6 +57,11 @@ public class ListaEnvios {
         return contador;
     }
     
+    /**
+     *
+     * @param i
+     * @return
+     */
     public Envio getEnvioI(int i){
         int contador = 0;
         NodoEnvio aux = first;
@@ -65,6 +79,10 @@ public class ListaEnvios {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public String enviosTipoD(){
         String r = "";
         NodoEnvio aux = first;
@@ -81,6 +99,10 @@ public class ListaEnvios {
         return r;
     }
     
+    /**
+     *
+     * @return
+     */
     public String enviosTipoP(){
         String r = "";
         NodoEnvio aux = first;
@@ -96,6 +118,12 @@ public class ListaEnvios {
         }
         return r;
     }
+
+    /**
+     *
+     * @param rut
+     * @return
+     */
     public String enviosPersonaEnviados(String rut){
         String r = "";
         NodoEnvio aux = first;
@@ -110,6 +138,12 @@ public class ListaEnvios {
         }
         return r;
     }
+
+    /**
+     *
+     * @param rut
+     * @return
+     */
     public String enviosPersonaRecibidos(String rut){
         String r = "";
         NodoEnvio aux = first;
@@ -124,6 +158,12 @@ public class ListaEnvios {
         }
         return r;
     }
+
+    /**
+     *
+     * @param ciudad
+     * @return
+     */
     public String enviosCiudadRemitente(String ciudad){
         String r = "";
         NodoEnvio aux = first;
@@ -138,6 +178,12 @@ public class ListaEnvios {
         }
         return r;
     }
+
+    /**
+     *
+     * @param ciudad
+     * @return
+     */
     public String enviosCiudadDestino(String ciudad){
         String r = "";
         NodoEnvio aux = first;

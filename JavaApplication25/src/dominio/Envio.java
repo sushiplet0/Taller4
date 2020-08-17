@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dominio;
 
 /**
  *
- * @author sushipleto
+ * @author Paula Veloso y Pablo Ríos
  */
 public abstract class Envio {
     private int codigo;
@@ -16,6 +12,15 @@ public abstract class Envio {
     private String ciudadEnvio;
     private String ciudadDestino;
     private int costo;
+    
+    /**
+     *
+     * @param codigo
+     * @param rutR
+     * @param rutD
+     * @param ciudadEnvio
+     * @param ciudadDestino
+     */
     public Envio(int codigo, String rutR, String rutD, String ciudadEnvio, String ciudadDestino){
         this.codigo = codigo;
         this.rutRemitente = rutR;
@@ -25,54 +30,105 @@ public abstract class Envio {
         this.costo = 0;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCodigo() {
         return codigo;
     }
 
+    /**
+     *
+     * @param codigo
+     */
     public void setCodigo(int codigo){
         this.codigo = codigo;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getRutRemitente() {
         return rutRemitente;
     }
 
+    /**
+     *
+     * @param rutRemitente
+     */
     public void setRutRemitente(String rutRemitente) {
         this.rutRemitente = rutRemitente;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getRutDestino() {
         return rutDestino;
     }
 
+    /**
+     *
+     * @param rutDestino
+     */
     public void setRutDestino(String rutDestino) {
         this.rutDestino = rutDestino;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCosto() {
         return costo;
     }
 
+    /**
+     *
+     * @param costo
+     */
     public void setCosto(int costo){
         this.costo = costo;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCiudadEnvio() {
         return ciudadEnvio;
     }
 
+    /**
+     *
+     * @param ciudadEnvio
+     */
     public void setCiudadEnvio(String ciudadEnvio) {
         this.ciudadEnvio = ciudadEnvio;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCiudadDestino() {
         return ciudadDestino;
     }
 
+    /**
+     *
+     * @param ciudadDestino
+     */
     public void setCiudadDestino(String ciudadDestino) {
         this.ciudadDestino = ciudadDestino;
     }
     
+    /**
+     *
+     */
     public abstract void calcularCosto();
 
     
